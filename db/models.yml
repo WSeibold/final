@@ -1,0 +1,56 @@
+Food:
+  category: string
+  description: text
+
+Criteria:
+  food_id: integer
+  criteria_desc: string
+  focus: text
+  star1: string
+  star2: string
+  star3: string
+  star4: string
+  star5: string
+
+Restaurant:
+  name: string
+  address: string
+  city: string
+  state: string
+  zip: string
+  location: string
+  genre: string
+  hours: string
+
+Menu:
+  restaurant_id: integer
+  food_id: integer
+
+Rating:
+  restaurant_id: integer
+  food_id: integer
+  criteria_id: integer
+  user_id: integer
+  rating_stars: integer
+  comments: text
+  visit_date: date
+  rating_date: timestamp
+
+User:
+  username: string
+  password: string
+  firstname: string
+  lastname: string
+  email: string
+  twitter: string
+
+Preferences:
+  user_id: integer
+  food_id: integer
+  criteria_id_1: integer
+  criteria_id_2: integer
+  criteria_id_3: integer
+  criteria_id_4: integer
+
+
+
