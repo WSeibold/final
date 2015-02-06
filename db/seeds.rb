@@ -16,11 +16,14 @@ Preferences.delete_all
 puts "Creating food - but only Bloody Marys matter ..."
 bloody = Food.create(category: "Bloody Mary", description: "The breakfast drink of champions! A drink consisting of booze and tomato juice seasoned to perfection.")
 hotdog = Food.create(category: "Hot Dog", description: "A delightful encased meat, aka a weiner, a frankfurter, a footlong, served hot in a long, soft roll and topped with various condiments")
+burger = Food.create(category: "Hamburger", description: "A delicious beef patty, served on a bun + condiments and delivered hot")
+oldfash = Food.create(category: "Old Fashioned", description: "A sophisticated beverage, whisky, soda, bitters, sugar, and ice cubes - hand cra to be enjoyed")
 
-# Create the restaurant, no so important, but we have to be able to find this food somehow, I'd like to be able to get coordinates from google, but we'll come back to that
+# Create the restaurant, not so important, but we have to be able to find this food somehow, I'd like to be able to get coordinates from google, but we'll come back to that
 puts "Creating the restaurants ... " 
 firehouse = Restaurant.create(name: "Firehouse Grill", address: "750 Chicago Ave", city: "Evanston", state: "IL", zip: "60202", location: "TBD", genre: "American")
 sunda = Restaurant.create(name: "Sunda", address: "110 West Illinois Street", city: "Chicago", state: "IL", zip: "60654", location: "TBD", genre: "Asian")
+marianos = Restaurant.create(name: "Mariano's", address: "1800 West Lawrence Avenue", city: "Chicago", state: "IL", zip: "60640", location: "TBD", genre: "Grocery Store")
 wickedhop = Restaurant.create(name: "The Wicked Hop", address: "345 North Broadway", city: "Milwaukee", state: "WI", zip: "53202", location: "TBD", genre: "Seafood")
 ubdogs = Restaurant.create(name: "U. B. Dogs", address: "185 North Franklin Street", city: "Chicago", state: "IL", zip: "60606", location: "TBD", genre: "American")
 
@@ -30,6 +33,8 @@ Menu.create(restaurant_id: firehouse.id, food_id: bloody.id)
 Menu.create(restaurant_id: sunda.id, food_id: bloody.id)
 Menu.create(restaurant_id: wickedhop.id, food_id: bloody.id)
 Menu.create(restaurant_id: ubdogs.id, food_id: hotdog.id)
+Menu.create(restaurant_id: marianos.id, food_id: bloody.id)
+
 
 # Create the users, I supect this will need to change once we get better login data? 
 puts "Creating the initial users"

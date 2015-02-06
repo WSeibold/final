@@ -1,0 +1,31 @@
+
+<div class="jumbotron text-center">
+  <h1> You can find the best <%= @food.category %> at these fine establishments </h1>
+</div>
+<!-- Fix this below this show should reveal the list of restaruants that I can find the food selected -->
+
+<div class="col-sm-12">
+<h2>The <%= @food.category %> </h2>
+  <p> <i> Description: <%= @food.description %> </i></p> 
+ 
+<table class="table">
+  
+
+  <h3> Restaurants </h3>
+  <% @spots.each do |spot| %> 
+  <tr>
+  <td>
+    <h4>  <%= spot.name %> </h4>
+    <p> <i>  Genre: <%= spot.genre %> </i></p>
+    <p>   Address: <br>
+        <%= spot.address %> <br>
+        <%= spot.city %>,
+        <%= spot.state %>
+        <%= spot.zip %></p>
+    <% end %>
+  </tr>
+</table>  
+
+    <a href="http://localhost:3000/foods" class="btn btn-primary">Back to Foods</a>
+
+</div>
