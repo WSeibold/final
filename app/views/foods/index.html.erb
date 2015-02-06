@@ -1,10 +1,18 @@
 
-<h1> Food & Beverage Categories </h1>
+
+<div class="jumbotron text-center">
+  <h1> Food & Beverage Categories </h1>
+</div>
+
+<div class="col-sm-12">
+
 <h4> Let's just focus on Bloody Marys at this point.  If you don't start your day off right, what's the point of starting it at all... </h4>
-<br>
-<h4> <i> Also Bloody Marys are pretty much the only area with content at this point. </i></h4>
+
+<p> <b><i> Also Bloody Marys are pretty much the only area with content at this point.... </i></b></p>
 
   <!-- Views should be the absolute minimal amount of ruby the what we put in the controll is the ACTION-->
+
+
 <table class="table">
 
 <% foods = Food.all %>
@@ -18,5 +26,7 @@
 <% end %>  
 
 <!-- need to go in and remember how to add padding to this button to put it down below -->
+  <td>
   <a href="foods/new" class="btn btn-primary">New Food</a>
+</div>
 

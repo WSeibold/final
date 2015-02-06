@@ -1,19 +1,23 @@
-<form action="/foods" method="POST">
+
+<div class="jumbotron text-center">
+  <h1> This is where we add new foods to track </h1>
+</div>
+
+<div class="col-sm-12">
+
+  <form action="/foods" method="POST">
   <div class="form-group">
-    <label for="name"> Name of the Movie</label>
-    <input name="name" type="text" class="form-control" id="name" placeholder="Enter the name of the movie" >
+    <label for="category">Name of the Food or Drink</label>
+<!-- Is there a way to check if something similar is already in the database or avoid duplicates?  -->
+    <input name="category" type="string" class="form-control" id="category" placeholder="Enter your food or drink" >
   </div>
 
   <div class="form-group">
-    <label for="summary"> Movie Summary</label>
-    <input name="summary" type="text" class="form-control" id="summary" placeholder="What's it about?" >
+    <label for="description"> Food Category Description</label>
+    <input name="description" type="text" class="form-control" id="description" placeholder="Try to be witty when you describe it" >
   </div>
   
-  <div class="form-group">
-    <label for="year_released"> Movie Year</label>
-    <input name="year_released" type="string" class="form-control" id="year_released" placeholder="What year was it released?" >
-  </div>
-
   <button type="submit" class="btn btn-default"> Submit</button>
 
-</form>
+  </form>
+</div>

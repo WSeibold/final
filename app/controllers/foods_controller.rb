@@ -23,6 +23,10 @@ class FoodsController < ApplicationController
   end
 
   def create
+
+    Food.create(category: params["category"], description: params["description"])
+
+
   end
 
   def update
