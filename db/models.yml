@@ -27,8 +27,7 @@ Menu:
   food_id: integer
 
 Rating:
-  restaurant_id: integer
-  food_id: integer
+  menu_id: integer
   criteria_id: integer
   user_id: integer
   rating_stars: integer

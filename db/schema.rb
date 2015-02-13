@@ -53,19 +53,17 @@ ActiveRecord::Schema.define(version: 0) do
   add_index "preferences", ["user_id"], name: "index_preferences_on_user_id"
 
   create_table "ratings", force: :cascade do |t|
-    t.integer  "restaurant_id"
-    t.integer  "food_id"
     t.integer  "user_id"
     t.integer  "rating_stars"
     t.text     "comments"
     t.date     "visit_date"
     t.datetime "rating_date"
     t.integer  "criteria_id"
+    t.integer  "menu_id"
   end
 
   add_index "ratings", ["criteria_id"], name: "index_ratings_on_criteria_id"
-  add_index "ratings", ["food_id"], name: "index_ratings_on_food_id"
-  add_index "ratings", ["restaurant_id"], name: "index_ratings_on_restaurant_id"
+  add_index "ratings", ["menu_id"], name: "index_ratings_on_menu_id"
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "restaurants", force: :cascade do |t|

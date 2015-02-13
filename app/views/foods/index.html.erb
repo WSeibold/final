@@ -1,5 +1,6 @@
 
 
+
 <div class="jumbotron text-center">
   <h1> Food & Beverage Categories </h1>
 </div>
@@ -19,7 +20,7 @@
 <% foods.each do |food| %>
   <tr>
   <td>
-  <p> <h3> <a href="/foods/<%= food.id%>"><%= food.category %></h3> </a></p>
+  <p> <h3> <%= link_to food.category, food %></h3> </a></p>
   <p> <h5><i> <%= food.description %> </i></h5></p>
   </tr>
   

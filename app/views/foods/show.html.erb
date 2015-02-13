@@ -15,6 +15,7 @@
   <% @spots.each do |spot| %> 
   <tr>
   <td>
+    <h4>  <%= link_to spot.id, menus_path %> </h4>
     <h4>  <%= spot.name %> </h4>
     <p> <i>  Genre: <%= spot.genre %> </i></p>
     <p>   Address: <br>
@@ -22,7 +23,10 @@
         <%= spot.city %>,
         <%= spot.state %>
         <%= spot.zip %></p>
+     
     <% end %>
+  </tr>
+  <tr>
   </tr>
 </table>  
 

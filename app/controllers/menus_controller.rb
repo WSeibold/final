@@ -1,22 +1,26 @@
-class FoodsController < ApplicationController
+class MenusController < ApplicationController
+
 
 # Need to define the variable is in the controller, this method is called the action
 # The index is a method in a controller mapping the db to the views 
   def index 
-  # What's in between the def & the end is all the work
-    @foods = Food.all
+
   end
 
   def show
-    @food = Food.find_by(id: params["id"])
-    # give me the roles where the movie id = param
+    # Find all the menus with the food id in params
+    @ratings = Ratings.where(menu_id: params["id"])
+    # give me the menus where the food id = param
     @availability = Menu.where(food_id: @food.id)
-    # We create an empty array and then... 
+    # We creat an empty array and then... 
     @spots = [] 
-    # ... loop through menus and add them to the array 
+    # ... loop through roles and add them to the array 
     @availability.each do |spot|
-      @spots << Restaurant.find_by(id: spot.restaurant_id)
+      @spots << Restaurant.find_by(id: spot.menu_id)
     end
+    
+    @ratings = Rating.where(menu_id: @spot.id)
+
   end 
   
   def new
@@ -25,6 +29,7 @@ class FoodsController < ApplicationController
   def create
 
     Food.create(category: params["category"], description: params["description"])
+
 
   end
 
