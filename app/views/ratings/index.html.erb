@@ -1,8 +1,20 @@
-<h1> Trying to set up the ratings </h1>
 
-<% @ratings.each do |rate| %>
-  <%= rate.rating_stars %>, 
-  <%= rate.comments %>
-<br>
-<% end %>
+<h1 class="page-header">
+  Trying to set up the ratings
+  <span class="pull-right">
+    <%= link_to "New Rating", new_rating_path, class: 'btn btn-sm btn-success' %>
+  </span>
+</h1>
+
+<ul>
+  <% @ratings.each do |rating| %>
+    <li><%= rating.rating_stars %>, <%= rating.comments %>, 
+        <%= link_to "Edit", edit_rating_path(rating), class: 'btn btn-sm'%>
+        <%= link_to "Delete", rating_path(rating), method: :delete, data: {confirm: " Are you really sure!?"}, class: 'btn btn-sm'%>
+    </li>
+  <% end %>
+</ul>
+
+
+
 

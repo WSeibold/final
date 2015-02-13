@@ -1,21 +1,41 @@
-Trying to set up the ratings
-
-<%= Rating.all %>
+<h1> This doesn't really work, but I'm getting closer </h1>
 
 <div class="col-sm-12">
 
-  <form action="/foods" method="POST">
+  <form action="/ratings" method="POST">
   <div class="form-group">
-    <label for="category">Name of the Food or Drink</label>
+    <label for="menu_id">Menu ID</label>
 <!-- Is there a way to check if something similar is already in the database or avoid duplicates?  -->
-    <input name="category" type="string" class="form-control" id="category" placeholder="Enter your food or drink" >
+<!-- I'm going to want this to auto populate  -->
+    <input name="menu_id" type="integer" class="form-control" id="menu_id" placeholder="ID of the Menu" >
   </div>
 
   <div class="form-group">
-    <label for="description"> Food Category Description</label>
-    <input name="description" type="text" class="form-control" id="description" placeholder="Try to be witty when you describe it" >
+    <label for="criteria_id"> Criteria ID - the type of rating it is </label>
+    <input name="criteria_id" type="integer" class="form-control" id="criteria_id" placeholder="This should be set up elsewhere" >
   </div>
   
+  <div class="form-group">
+    <label for="user_id"> User ID - who is doing it?  </label>
+    <input name="user_id" type="integer" class="form-control" id="user_id" placeholder="This should be set up elsewhere" >
+  </div> 
+  
+  <div class="form-group">
+    <label for="rating_stars"> Rating in terms of stars - will need to constrain  </label>
+    <input name="rating_stars" type="integer" class="form-control" id="rating_stars" placeholder="This will be a cool imput someday" >
+  </div> 
+
+  <div class="form-group">
+    <label for="comments"> Ok, let us know how you feel ?  </label>
+    <input name="comments" type="text" class="form-control" id="comments" placeholder="This should show up on the page" >
+  </div> 
+
+  <div class="form-group">
+    <label for="visit_date"> Ok, when were you there ?  </label>
+    <input name="visit_date" type="date" class="form-control" id="visit_date" placeholder="put in the date" >
+  </div> 
+
+  <p> I'd also like to add a timestamp somehow </p>
   <button type="submit" class="btn btn-default"> Submit</button>
 
   </form>

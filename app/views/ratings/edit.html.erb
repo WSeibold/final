@@ -1,0 +1,14 @@
+<h1>Trying to set up the ratings</h1>
+
+<%= form_for @rating do |form| %>
+  <div class="form-group">
+    
+    <%= form.label :rating_stars %>
+    <%= form.text_field :rating_stars, class: "form-control" %>
+    <%= form.label :comments %>
+    <%= form.text_field :comments, class: "form-control" %>
+    <%= form.label :visit_date %>
+    <%= form.text_field :visit_date, class: "form-control" %>
+  </div>
+  <%= form.button 'Update rating & comments', class: "btn btn-success" %>
+<% end %>
