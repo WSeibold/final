@@ -1,6 +1,6 @@
 Food:
   category: string
-  description: text
+  description: string
 
 Criteria:
   food_id: integer

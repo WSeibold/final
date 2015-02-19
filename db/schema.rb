@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 0) do
 
   create_table "foods", force: :cascade do |t|
     t.string "category"
-    t.text   "description"
+    t.string "description"
   end
 
   create_table "menus", force: :cascade do |t|

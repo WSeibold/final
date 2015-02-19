@@ -6,21 +6,16 @@
 
 <!-- This isn't working - I keep getting ActionController::Invalid AuthenticityToken in FoodsController#create  -->
 
-<div class="col-sm-12">
 
-  <form action="/foods" method="POST">
+<%= form_for @food do |form| %>
   <div class="form-group">
-    <label for="category">Name of the Food or Drink</label>
-<!-- Is there a way to check if something similar is already in the database or avoid duplicates?  -->
-    <input name="category" type="string" class="form-control" id="category" placeholder="Enter your food or drink" >
+    <%= form.label :category %>
+    <%= form.text_field :category, class: "form-control" %>
   </div>
-
   <div class="form-group">
-    <label for="description"> Food Category Description</label>
-    <input name="description" type="text" class="form-control" id="description" placeholder="Try to be witty when you describe it" >
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
-  
-  <button type="submit" class="btn btn-default"> Submit</button>
-
-  </form>
-</div>
+  <%= form.button 'Create Food', class: "btn btn-success" %>
+<% end %>
+<!--  placeholder: "Name of the Food or Drink Category"  -->

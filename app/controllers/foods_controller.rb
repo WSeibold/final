@@ -20,17 +20,33 @@ class FoodsController < ApplicationController
   end 
   
   def new
+    @food = Food.new
   end
 
   def create
+    food_params = params.require(:food).permit(:category, :description)
+    @food = Food.create(food_params)
+    if @food.save
+       redirect_to foods_path
+     else
+       render "fail"
+    end
+  end
 
-    Food.create(category: params["category"], description: params["description"])
-
+  def edit
+    @food = Food.find_by(id: params["id"])
   end
 
   def update
+    food_params = params.require(:food).permit(:category, :description)
+    @food = Food.find_by(id: params["id"])
+    @food.update(food_params)
+    redirect_to foods_path
   end
 
   def destroy
+    @food = Food.find_by(id: params["id"])
+    @food.destroy
+    redirect_to action: :index
   end
 end

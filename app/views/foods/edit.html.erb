@@ -1,0 +1,23 @@
+
+
+
+<div class="jumbotron text-center">
+  <h1> Edit Food & Beverage Categories </h1>
+</div>
+
+<p> <b><i> Again Bloody Marys are pretty much the only area with content at this point.... </i></b></p>
+
+  <!-- Views should be the absolute minimal amount of ruby the what we put in the controll is the ACTION-->
+
+
+<%= form_for @food do |form| %>
+  <div class="form-group">
+    <%= form.label :category %>
+    <%= form.text_field :category, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+    <%= form.button 'Update Food', class: "btn btn-success" %>
+<% end %>
