@@ -47,6 +47,6 @@ class FoodsController < ApplicationController
   def destroy
     @food = Food.find_by(id: params["id"])
     @food.destroy
-    redirect_to action: :index
+    redirect_to foods_path
   end
 end

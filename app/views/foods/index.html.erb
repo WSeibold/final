@@ -21,7 +21,7 @@
   <p> 
     <h5><i> <%= food.description %> </i></h5>
     <%= link_to "Edit", edit_food_path(food) %> 
-    <%= link_to "Delete", food, method: :delete, data: { confirm: 'Are you really really really sure?' } %>
+    <%= link_to "Delete", food_path(food), method: :delete, data: { confirm: 'Are you really really really sure?' }%>
   </p>
   </tr>
   
