@@ -1,4 +1,4 @@
-class RestauantsController < ApplicationController
+class RestaurantsController < ApplicationController
 
 
 # Need to define the variable is in the controller, this method is called the action

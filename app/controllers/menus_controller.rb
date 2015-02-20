@@ -4,10 +4,12 @@ class MenusController < ApplicationController
 # Need to define the variable is in the controller, this method is called the action
 # The index is a method in a controller mapping the db to the views 
   def index 
-
+    
   end
 
   def show
+    @place = Menu.find_by(id: params["id"])
+
     # Find all the menus with the food id in params
     @ratings = Ratings.where(menu_id: params["id"])
     # give me the menus where the food id = param

@@ -57,15 +57,15 @@ Preferences.create(user_id: emily.id, food_id: bloody.id, criteria_id_1: spice.i
 # Create the table of user ratings, this is the real content, I should probably write a bunch of it. 
 puts "Creating the ratings, here's the real content in the making ..."
 
-Rating.create(menu_id: sunda_bloody, user_id: weston.id, criteria_id: spice.id, rating_stars: 3, comments: "Sweeter than I would prefer", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: weston.id, criteria_id: garnishes.id, rating_stars: 5, comments: "Holy Balls this is Amazing!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: weston.id, criteria_id: consistency.id, rating_stars: 5, visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: weston.id, criteria_id: delivery.id, rating_stars: 5, comments: "I took a picture, and I might frame it", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: weston.id, criteria_id: spice.id, rating_stars: 3, comments: "Sweeter than I would prefer", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: weston.id, criteria_id: garnishes.id, rating_stars: 5, comments: "Holy Balls this is Amazing!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: weston.id, criteria_id: consistency.id, rating_stars: 5, visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: weston.id, criteria_id: delivery.id, rating_stars: 5, comments: "I took a picture, and I might frame it", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
 
-Rating.create(menu_id: sunda_bloody, user_id: emily.id, criteria_id: spice.id, rating_stars: 2, comments: "These are supposed to have a kick!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: emily.id, criteria_id: garnishes.id, rating_stars: 5, comments: "Whoa!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: emily.id, criteria_id: consistency.id, rating_stars: 4, comments: "Slightly on the thin side", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
-Rating.create(menu_id: sunda_bloody, user_id: emily.id, criteria_id: delivery.id, rating_stars: 3, comments: "it was empty, and no mountains! :(", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: emily.id, criteria_id: spice.id, rating_stars: 2, comments: "These are supposed to have a kick!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: emily.id, criteria_id: garnishes.id, rating_stars: 5, comments: "Whoa!", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: emily.id, criteria_id: consistency.id, rating_stars: 4, comments: "Slightly on the thin side", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
+Rating.create(menu_id: sunda_bloody.id, user_id: emily.id, criteria_id: delivery.id, rating_stars: 3, comments: "it was empty, and no mountains! :(", visit_date: "2014-1-25".to_date, rating_date: DateTime.now)
 
 puts "There are now #{User.count} users, #{Food.count} foods, #{Restaurant.count} restaurants, and #{Rating.count} ratings in the database."
 

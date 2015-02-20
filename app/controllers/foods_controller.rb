@@ -8,15 +8,20 @@ class FoodsController < ApplicationController
   end
 
   def show
+    # Define the food as the what you clicked on 
     @food = Food.find_by(id: params["id"])
-    # give me the roles where the movie id = param
-    @availability = Menu.where(food_id: @food.id)
-    # We create an empty array and then... 
-    @spots = [] 
-    # ... loop through menus and add them to the array 
-    @availability.each do |spot|
-      @spots << Restaurant.find_by(id: spot.restaurant_id)
-    end
+    # Now give me all the restaurants that have it
+    @spots = @food.menus
+
+    # @food = Food.find_by(id: params["id"])
+    # # give me the roles where the movie id = param
+    # @availability = Menu.where(food_id: @food.id)
+    # # We create an empty array and then... 
+    # @spots = [] 
+    # # ... loop through menus and add them to the array 
+    # @availability.each do |spot|
+    #   @spots << Restaurant.find_by(id: spot.restaurant_id)
+    #end
   end 
   
   def new

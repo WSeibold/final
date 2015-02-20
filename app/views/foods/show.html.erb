@@ -8,26 +8,28 @@
 <h2>The <%= @food.category %> </h2>
   <p> <i> Description: <%= @food.description %> </i></p> 
  
-<table class="table">
+<table class="table" >
   
 
   <h3> Restaurants </h3>
   <% @spots.each do |spot| %> 
   <tr>
   <td>
-    <h4>  <%= link_to spot.id, menus_path %> </h4>
-    <h4>  <%= spot.name %> </h4>
-    <p> <i>  Genre: <%= spot.genre %> </i></p>
+    <h4>  <%= link_to spot.id, ratings_path %> </h4>
+    <h4>  <%= link_to spot.restaurant.name, ratings_path %> </h4>
+    <p> <i>  Genre: <%= spot.restaurant.genre %> </i></p>
     <p>   Address: <br>
-        <%= spot.address %> <br>
-        <%= spot.city %>,
-        <%= spot.state %>
-        <%= spot.zip %></p>
-     
+        <%= spot.restaurant.address %> <br>
+        <%= spot.restaurant.city %>,
+        <%= spot.restaurant.state %>
+        <%= spot.restaurant.zip %></p>
+<!--  run through and print each of the comments from the associated ratings -->
+      <% spot.ratings.each do |review| %>
+        <li> <%= review.comments %> </li>
+      <% end %>
+  </tr>
     <% end %>
-  </tr>
-  <tr>
-  </tr>
+    
 </table>  
 
     <a href="http://localhost:3000/foods" class="btn btn-primary">Back to Foods</a>

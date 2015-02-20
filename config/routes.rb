@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # this auto creates the routes for creating a new food
   resources :foods
   resources :ratings
-  resources :restuarants
+  resources :restaurants
   resources :menus
   
   root to: "foods#index"
