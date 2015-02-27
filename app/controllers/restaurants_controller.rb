@@ -12,25 +12,35 @@ class RestaurantsController < ApplicationController
   end 
   
   def new
-    @restaurants = Restaurant.new
+    @rest = Restaurant.new
+  end
+
+  def create
+    rest_params = params.require(:restaurant).permit!
+    @rest = Restaurant.create(rest_params)
+    if @rest.valid?
+      redirect_to restaurants_path, notice: "Cool Dude"
+    else
+      render "new", notice: "Sorry, it didn't save"
+    end
   end
 
   def edit
-    @restaurant = Restaurant.find_by(id: params["id"])
-  end
-    
-  def create
-    # You have to tell the create what to do
-    # Rails has secruity thing so you can't just do  Actor.create(params["actor"])
-    # You need this permission for any field
-    actor_params = params.require(:actor).permit(:name)
-    Actor.create(actor_params)
-    redirect_to actors_path
+    @rest = Restaurant.find_by(id: params["id"])
   end
 
   def update
+    rest_params = params.require(:restaurant).permit!
+    @rest = Restaurant.find_by(id: params["id"])
+    @rest.update(rest_params)
+    if @rest.valid?
+      redirect_to restaurants_path, notice: @rest.name+" has been updated"
+    else
+      render "edit", notice: "Sorry, it didn't save"
+    end
   end
 
   def destroy
+    # this will need to be a complex link thing
   end
 end

@@ -12,6 +12,7 @@ class RatingsController < ApplicationController
   end 
   
   def new
+    @menus = Menu.where(restaurant_id: params["id"])
     @rating = Rating.new
 
   end
@@ -19,29 +20,23 @@ class RatingsController < ApplicationController
   def create
 
   #  Rating.create(category: params["category"], description: params["description"])
-    rating_params = 
-      params.require(:menu_id)
-      params.require(:criteria_id)
-      params.require(:user_id)
-      params.require(:rating_stars)
-      params.permit(:comments)
-      params.permit(:visit_date)
-      params.permit(:rating_date)
-    Rating.create(rating_params)
-    redirect_to ratings_path
+    rating_params = params.require(:rating).permit!
+    @rating = Rating.create(rating_params)
+    if @rating.valid?
+      redirect_to ratings_path, notice: "Cool Dude"
+    else
+      render "new"
+    end
   end
 
   def edit
-    @rating = Rating.find_by(id: params["id"])
+    @ratings = Rating.find_by(id: params["id"])
   end
 
   def update
-    rating_params = 
-      params.permit(:rating_stars)
-      params.permit(:comments)
-      params.permit(:visit_date)
-    @rating = Rating.find_by(id: params["id"])
-    @rating.update(rating_params)
+    rating_params = params.require(:ratings).permit!
+    @ratings = Rating.find_by(id: params["id"])
+    @ratings.update(rating_params)
     redirect_to ratings_path
   end
 

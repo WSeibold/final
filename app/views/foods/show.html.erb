@@ -11,7 +11,12 @@
 <table class="table" >
   
 
+  <span class="pull-right">
+    <%= link_to "Rate a "+@food.category, new_rating_path(:food_id), class: 'btn btn-sm btn-success' %>
+    <% puts params.inspect %>
+  </span>
   <h3> Restaurants </h3>
+
   <% @spots.each do |spot| %> 
   <tr>
   <td>

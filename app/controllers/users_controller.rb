@@ -16,8 +16,8 @@ class UsersController < ApplicationController
 
   def create
     user_params = params.require(:user).permit!
-    user = User.create(user_params)
-    if user.valid?
+    @user = User.create(user_params)
+    if @user.valid?
       redirect_to users_path, notice: "Cool Dude"
     else
       render "new"

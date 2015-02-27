@@ -24,8 +24,6 @@
 <body>
 
   <div class="container">
-<!-- 
-This is where it's breaking -->
 
     <%= form_tag sessions_path, class: "form-signin" do %>
       <h1>BestBloodyBuddy</h1>
@@ -34,6 +32,10 @@ This is where it's breaking -->
       <%= password_field_tag :password, "", class: "form-control", placeholder: "Password" %>
       <%= button_tag "Sign In", class: "btn btn-lg btn-primary btn-block" %>
     <% end %>
+
+  <span class="pull-right">
+    <%= link_to "Create User", new_user_path, class: 'btn btn-sm btn-success' %>
+  </span>
 
   </div>
 </body>

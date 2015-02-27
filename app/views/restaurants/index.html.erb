@@ -1,0 +1,16 @@
+<h3 class="page-header">
+  All Restaurants
+  <span class="pull-right">
+    <%= link_to "New Restaurant", new_restaurant_path, class: 'btn btn-sm btn-success' %>
+  </span>
+</h3>
+
+
+<ul>
+  <% @restaurants.each do |list| %>
+    <li><b><%= list.name %></b>
+         <p><%= list.address %> <br>
+         <%= list.city %>, <br><%= list.state %> <%= list.zip %> <br>
+         <%= link_to "Edit", edit_restaurant_path(list) %> <%= link_to "Delete", restaurant_path(list), method: :delete, data: { confirm: 'Are you sure?' } %> </p></li>
+  <% end %>
+</ul>
