@@ -38,8 +38,8 @@ marianos_bloody = Menu.create(restaurant_id: marianos.id, food_id: bloody.id)
 
 # Create the users, I supect this will need to change once we get better login data? 
 puts "Creating the initial users"
-weston = User.create(username: "WestonA", password: "beer", firstname: "Weston", lastname: "Anderson", email: "weston.anderson@gmail.com", twitter: "@W_Seibold")
-emily = User.create(username: "EmilyA", password: "cheese", firstname: "Emily", lastname: "Anderson", email: "hoover.emilyi@gmail.com", twitter: "@AndersonEHI")
+weston = User.create(name: "WestonA", password: "beer", firstname: "Weston", lastname: "Anderson", email: "weston.anderson@gmail.com", twitter: "@W_Seibold")
+emily = User.create(name: "EmilyA", password: "cheese", firstname: "Emily", lastname: "Anderson", email: "hoover.emilyi@gmail.com", twitter: "@AndersonEHI")
 
 
 # Create the criteria, this are important and can be variable by user, but clearly defining criteria is what makes a good framework

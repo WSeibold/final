@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+  skip_before_action :require_user
 
 
 # Need to define the variable is in the controller, this method is called the action

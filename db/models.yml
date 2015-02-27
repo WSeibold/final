@@ -36,8 +36,8 @@ Rating:
   rating_date: timestamp
 
 User:
-  username: string
-  password: string
+    name: string
+  password_digest: string
   firstname: string
   lastname: string
   email: string

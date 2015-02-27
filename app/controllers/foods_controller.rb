@@ -1,5 +1,7 @@
 class FoodsController < ApplicationController
 
+  skip_before_action :require_user
+
 # Need to define the variable is in the controller, this method is called the action
 # The index is a method in a controller mapping the db to the views 
   def index 

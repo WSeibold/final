@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   resources :ratings
   resources :restaurants
   resources :menus
+  resources :users
+  resources :sessions
   
   root to: "foods#index"
 
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+  
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -78,12 +78,12 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
     t.string "firstname"
     t.string "lastname"
     t.string "email"
     t.string "twitter"
+    t.string "password_digest"
+    t.string "name"
   end
 
 end
