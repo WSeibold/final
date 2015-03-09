@@ -12,9 +12,12 @@ class RatingsController < ApplicationController
   end 
   
   def new
-    @menus = Menu.where(restaurant_id: params["id"])
     @rating = Rating.new
-
+    @food = Food.find_by(id: params["movie_id"]
+    # Define the food as the what you clicked on 
+    @menus = Menu.where(food_id: params["id"])
+    # Now give me all the restaurants that have it
+    @spots = @menus.restaurants
   end
 
   def create

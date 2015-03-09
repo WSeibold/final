@@ -15,6 +15,8 @@ class FoodsController < ApplicationController
     # Now give me all the restaurants that have it
     @spots = @food.menus
 
+    @rating = Rating.new
+    @rest = @spots.restaurants
     # @food = Food.find_by(id: params["id"])
     # # give me the roles where the movie id = param
     # @availability = Menu.where(food_id: @food.id)

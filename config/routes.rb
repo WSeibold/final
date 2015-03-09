@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
   # this auto creates the routes for creating a new food
-  resources :foods
-  resources :ratings
+  resources :foods do
+    resources :ratings
+  end
   resources :restaurants
   resources :menus
   resources :users
