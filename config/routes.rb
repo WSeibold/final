@@ -9,11 +9,10 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions
   
-  root to: "foods#index"
-
   get "/login", to: "sessions#new"
   get "/logout", to: "sessions#destroy"
   
+  root to: "foods#index"
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

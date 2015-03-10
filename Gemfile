@@ -18,8 +18,6 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 
-# Adding Brian's gemfile to create ActiveModel
-gem 'ez'  
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -39,6 +37,8 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'\
+  # Adding Brian's gemfile to create ActiveModel
+  gem 'ez'  
 end
 
 source 'https://rubygems.org'
