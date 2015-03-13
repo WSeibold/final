@@ -4,16 +4,14 @@ class RatingsController < ApplicationController
   def new
     # get my food
     @food = Food.find_by(id: params["food_id"])
-    @spots = @food.menus
+    @spots = @food.restaurants
     @rating = Rating.new
-  
-#  Add items to the array so that we can list in drop down  
-
+    
   end
 
   def create
     @food = Food.find_by(id: params["food_id"])
-    @menus = @food.menus
+    @spots = @food.menus
     
     rating_params = params.require(:rating).permit!
     @rating = @food.rating.new(rating_params)
