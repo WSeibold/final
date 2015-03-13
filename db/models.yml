@@ -33,15 +33,18 @@ Rating:
   rating_stars: integer
   comments: text
   visit_date: date
-  rating_date: timestamp
+  created_at: datetime
+  updated_at: datetime
 
 User:
-    name: string
+  name: string
   password_digest: string
   firstname: string
   lastname: string
   email: string
   twitter: string
+  created_at: datetime
+  updated_at: datetime
 
 Preferences:
   user_id: integer

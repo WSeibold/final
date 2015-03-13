@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :ratings
   end
   resources :restaurants
-  resources :menus
+  resources :menus 
   resources :users
   resources :sessions
   

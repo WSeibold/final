@@ -11,16 +11,28 @@
   </div>
 <% end %>
 
-<%= form_for [@food, @rating] do |form| %>
+
+
+<%= form_for [@food, @rating] do |f| %>
   <div class="form-group">
-    <%= form.label :rating %>
-    <%= form.select :rating, [1,2,3,4,5], class: "form-control" %>
+    <%= f.label :menu_id %>
+    <%= f.select :menu_id, @spots, class: "form-control" %>
   </div>
   <div class="form-group">
-    <%= form.label :body %>
-    <%= form.text_area :body, class: "form-control" %>
+    <%= f.label :criteria_id %>
+    <%= f.select :criteria_id, ["Need to make this link", "should be easy", "how to do it"], class: "form-control" %>
   </div>
-  <%= form.button 'Post Your Review', class: "btn btn-success" %>
+  <div class="form-group">
+    <%= f.label :rating_stars %>
+    <%= f.select :rating_stars, [1,2,3,4,5], class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comments %>
+    <%= f.text_area :comments, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :visit_date %>
+    <%= f.date_field :visit_date, class: "form-control" %>
+  </div>
+  <%= f.button 'Post Your Review', class: "btn btn-success" %>
 <% end %>
-
-

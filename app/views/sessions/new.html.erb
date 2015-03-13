@@ -22,21 +22,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="container">
-
+<div class= "container">
+  <div class="row">
+  <div class="col-md-6 col-md-offset-3 col-sm-4 col-sm-offset-4">
     <%= form_tag sessions_path, class: "form-signin" do %>
-      <h1>BestBloodyBuddy</h1>
+      <h1>Best Bloody</h1>
       <h2 class="form-signin-heading">Please sign in</h2>
       <%= text_field_tag :email, "", class: "form-control", placeholder: "Email Address" %>
-      <%= password_field_tag :password, "", class: "form-control", placeholder: "Password" %>
-      <%= button_tag "Sign In", class: "btn btn-lg btn-primary btn-block" %>
+      <%= password_field_tag :password, "password", class: "form-control", placeholder: "Password" %>
+      <%= button_tag "Sign In", class: "btn btn-primary btn-block" %>
+      <%= link_to "Create User", new_user_path, class: 'btn btn-success btn-block' %>
     <% end %>
 
   
-    <%= link_to "Create User", new_user_path, class: 'btn btn-sm btn-success' %>
+    
   
-
   </div>
+  </div>
+</div>
 </body>
 </html>
