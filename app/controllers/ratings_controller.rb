@@ -11,15 +11,13 @@ class RatingsController < ApplicationController
 
   def create
     @food = Food.find_by(id: params["food_id"])
-    @spots = @food.menus
-    
+   
     rating_params = params.require(:rating).permit!
-    @rating = @food.rating.new(rating_params)
+    @rating = Rating.create(rating_params)
 #   try to find the menu id that is for the selected restaurant
-    @rating.menu_id = @menus.find_by(restaurant) 
     @rating.user = current_user
     if @rating.save
-      redirect_to @food, notice: "Thanks for the review!"
+      redirect_to foods_path notice: "Thanks for the review!"
     else
       render "new"
     end
